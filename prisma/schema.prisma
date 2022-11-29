@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  //provider = "cockroachdb"
+  provider = "postgres"
+  url = env("VITE_DATABASE_URL")
+}
+
+model player {
+  //id Int @id @default(sequence())
+  id Int @id @default(autoincrement())
+  name String
+  position String
+  apperances appearance[]
+  goals goalscorer[]
+}
+
+model location {
+  //id Int @id @default(sequence())
+  id Int @id @default(autoincrement())
+  name String
+  seasons season[]
+}
+
+model season {
+  //id Int @id @default(sequence())
+  id Int @id @default(autoincrement())
+  name String
+  start_date DateTime
+  end_date DateTime
+  location_id Int
+  location location @relation(fields: [location_id], references: [id])
+  final_position Int
+  games game[]
+}
+
+model opponent {
+  //id Int @id @default(sequence())
+  id Int @id @default(autoincrement())
+  name String
+  games game[]
+}
+
+model game {
+  date DateTime @id
+  opponent_id Int
+  opponent opponent @relation(fields: [opponent_id], references: [id])
+  opponent_goals Int
+  walk_over Boolean
+  season_id Int
+  season season @relation(fields: [season_id], references: [id])
+  appearances appearance[]
+  goals goalscorer[]
+}
+
+model goalscorer {
+  game_date DateTime
+  player_id Int
+  number_of_goals Int
+  game game @relation(fields: [game_date], references: [date])
+  player player @relation(fields: [player_id], references: [id])
+
+  @@id([game_date, player_id])
+}
+
+model appearance {
+  game_date DateTime
+  player_id Int
+  game game @relation(fields: [game_date], references: [date])
+  player player @relation(fields: [player_id], references: [id])
+
+  @@id([game_date, player_id])
+}
