@@ -1,26 +1,26 @@
-INSERT INTO player (name, position) VALUES ('Dan Kloss', 'Defender'); /*1*/
-INSERT INTO player (name, position) VALUES ('Thomas Hacker', 'Number 10'); /*2*/
-INSERT INTO player (name, position) VALUES ('Alex Hau', 'Finisher'); /*3*/
-INSERT INTO player (name, position) VALUES ('Jo Bonni', 'Libero'); /*4*/
-INSERT INTO player (name, position) VALUES ('Matt Kaye', 'Playmaker'); /*5*/
-INSERT INTO player (name, position) VALUES ('Nick Pitt', 'Midfield'); /*6*/
-INSERT INTO player (name, position) VALUES ('Ivan Tang', 'Goalkeeper'); /*7*/
-INSERT INTO player (name, position) VALUES ('Keyan Salarkia', 'Tricky Winger'); /*8*/
-INSERT INTO player (name, position) VALUES ('Paul Hardy', 'Pressing Forward'); /*9*/
-INSERT INTO player (name, position) VALUES ('Mark Bridger', 'Wide Forward'); /*10*/
+INSERT INTO player (id, name, position) VALUES (1, 'Dan Kloss', 'Defender'); /*1*/
+INSERT INTO player (id, name, position) VALUES (2, 'Thomas Hacker', 'Number 10'); /*2*/
+INSERT INTO player (id, name, position) VALUES (3, 'Alex Hau', 'Finisher'); /*3*/
+INSERT INTO player (id, name, position) VALUES (4, 'Jo Bonni', 'Libero'); /*4*/
+INSERT INTO player (id, name, position) VALUES (5, 'Matt Kaye', 'Playmaker'); /*5*/
+INSERT INTO player (id, name, position) VALUES (6, 'Nick Pitt', 'Midfield'); /*6*/
+INSERT INTO player (id, name, position) VALUES (7, 'Ivan Tang', 'Goalkeeper'); /*7*/
+INSERT INTO player (id, name, position) VALUES (8, 'Keyan Salarkia', 'Winger'); /*8*/
+INSERT INTO player (id, name, position) VALUES (9, 'Paul Hardy', 'Pressing Forward'); /*9*/
+INSERT INTO player (id, name, position) VALUES (10, 'Mark Bridger', 'Wide Forward'); /*10*/
 
-INSERT INTO location (name) VALUES ('Lammas Park');
+INSERT INTO location (id, name) VALUES (1, 'Lammas Park');
 
-INSERT INTO season (name, start_date, end_date, location_id, final_position) VALUES ('Season 1', '30/8/22', '8/11/22', 1, 2);
-INSERT INTO season (name, start_date, end_date, location_id, final_position) VALUES ('Season 2', '15/11/22', '14/02/22', 1, -1);
+INSERT INTO season (id, name, start_date, end_date, location_id, final_position) VALUES (1, 'Season 1', '30/8/22', '8/11/22', 1, 2);
+INSERT INTO season (id, name, start_date, end_date, location_id, final_position) VALUES (2, 'Season 2', '15/11/22', '14/02/22', 1, -1);
 
-INSERT INTO opponent (name) VALUES ('Frogs'); /*1*/
-INSERT INTO opponent (name) VALUES ('Ealing Finest'); /*2*/
-INSERT INTO opponent (name) VALUES ('Fanad United'); /*3*/
-INSERT INTO opponent (name) VALUES ('Ringers FC'); /*4*/
-INSERT INTO opponent (name) VALUES ('London West FC'); /*5*/
-INSERT INTO opponent (name) VALUES ('ISA FC'); /*6*/
-INSERT INTO opponent (name) VALUES ('West Ealing Warlocks'); /*7*/
+INSERT INTO opponent (id, name) VALUES (1, 'Frogs'); /*1*/
+INSERT INTO opponent (id, name) VALUES (2, 'Ealing Finest'); /*2*/
+INSERT INTO opponent (id, name) VALUES (3, 'Fanad United'); /*3*/
+INSERT INTO opponent (id, name) VALUES (4, 'Ringers FC'); /*4*/
+INSERT INTO opponent (id, name) VALUES (5, 'London West FC'); /*5*/
+INSERT INTO opponent (id, name) VALUES (6, 'ISA FC'); /*6*/
+INSERT INTO opponent (id, name) VALUES (7, 'West Ealing Warlocks'); /*7*/
 
 INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('30/08/22 19:40', 1, 5, False, 1);
 INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('06/09/22 19:00', 2, 0, True, 1);
