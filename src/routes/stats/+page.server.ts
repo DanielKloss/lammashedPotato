@@ -1,4 +1,3 @@
-import type { Stat } from '$lib/types/stat';
 import { PrismaClient } from '@prisma/client';
 
 /** @type {import('./$types').PageServerLoad} */
