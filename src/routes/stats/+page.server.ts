@@ -15,8 +15,8 @@ export async function load() {
             },
             goals: true
         }
-    })
-        
+    });
+
 	await prisma.$disconnect();
 
 	return { players };

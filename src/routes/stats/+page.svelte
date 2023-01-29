@@ -12,11 +12,13 @@
     let mostGamesScoredIn = Math.max(...data.players.flatMap(p => p._count.goals));
     let mostGamesWon;
     let mostGamesLost;
+    let mostGoalsInAGame = Math.max(...data.players.flatMap(p => Math.max(...p.goals.flatMap(g => g.number_of_goals))));
 
     stats.push({statName: "Most Appearances", statValue: mostAppearances, playerName: data.players.filter(p => p._count.apperances == mostAppearances).flatMap(p => p.name)})
     stats.push({statName: "Most Goals", statValue: mostGoals, playerName: data.players.filter(p => p.goals.reduce((t, g) => {return t + g.number_of_goals}, 0) == mostGoals).flatMap(p => p.name)})
     stats.push({statName: "Best Goals to Appearences Ratio", statValue: bestGoalsAppearenceRatio, playerName: data.players.filter(p => p.goals.reduce((t, g) => {return t + g.number_of_goals}, 0) / p._count.apperances == bestGoalsAppearenceRatio).flatMap(p => p.name)})
     stats.push({statName: "Most Games Scored In", statValue: mostGamesScoredIn, playerName: data.players.filter(p => p._count.goals == mostGamesScoredIn).flatMap(p => p.name)});
+    stats.push({statName: "Most Goals Scored in One Game", statValue: mostGoalsInAGame, playerName: data.players.filter(p => Math.max(...p.goals.flatMap(g => g.number_of_goals)) == mostGoalsInAGame).flatMap(p => p.name)});
 </script>
 
 <main class="page">
