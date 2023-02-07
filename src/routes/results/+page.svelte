@@ -20,11 +20,6 @@
     </select>
     {#each data.seasons as season}
         {#if season.name == selectedSeason}
-            {#if season.final_position > -1}
-            <div class="card">
-                Final League Position: {season.final_position}
-            </div>
-            {/if}
             <div class="stats">
                 {#each stats as stat}
                     <StatCard {stat}/>
@@ -45,18 +40,26 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding: 1rem;
+        padding: 0.25rem;
     }
 
     .select {
         padding: 0.5rem;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-size: 0.65rem;
+        letter-spacing: 0.15rem;
+        border: none;
+        text-align: center;
+        padding: 1rem;
+        background: linear-gradient(120deg, #155e75 0%, #0e7490 75%);
         border-radius: 5px;
     }
 
     .stats {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 1rem;
+        gap: 0.1rem;
     }
 
     .season {

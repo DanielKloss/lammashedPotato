@@ -13,7 +13,6 @@ export function calculateStats(seasons: Array<season>, selectedSeason: string): 
         
         for (const game of currentSeason.games) {
             let ourGoals = game.goals.reduce((t, g) => { return t + g.number_of_goals; }, 0);
-            console.log(ourGoals + " vs " + game.opponent_goals + " walkover: " + game.walk_over)
             if (game.walk_over || (ourGoals > game.opponent_goals)) {
                 wins.statValue++;
             } else if (ourGoals == game.opponent_goals && !game.walk_over) {
@@ -24,13 +23,19 @@ export function calculateStats(seasons: Array<season>, selectedSeason: string): 
         }
 
         stats.push(wins);
-        stats.push(losses);
         stats.push(draws);
+        stats.push(losses);
+
+        stats.push({
+					statName: 'Position',
+					statValue: currentSeason.final_position,
+					playerName: []
+				});
 
         let appearances = currentSeason.games.flatMap(g => g.appearances.flatMap(a => a.player.name));
         let appearancesCount: { [name: string]: number; } = {}
         let mostAppearancesCount = 0;
-        let mostAppearances: Stat = { statName: selectedSeason + " Most apperances", statValue: 0, playerName: ["player"] }
+        let mostAppearances: Stat = { statName: "Most apps", statValue: 0, playerName: ["player"] }
         for (const player of appearances) {
             if (appearancesCount[player] == undefined) {
                 appearancesCount[player] = 1;
@@ -50,7 +55,7 @@ export function calculateStats(seasons: Array<season>, selectedSeason: string): 
         let goals = currentSeason.games.flatMap(g => g.goals);
         let goalsCount: { [name: string]: number; } = {}
         let mostGoalsCount = 0;
-        let mostGoals: Stat = { statName: selectedSeason + " Most goals", statValue: 0, playerName: ["player"] }
+        let mostGoals: Stat = { statName: "Most goals", statValue: 0, playerName: ["player"] }
         for (const goal of goals) {
             if (goalsCount[goal.player.name] == undefined) {
                 goalsCount[goal.player.name] = goal.number_of_goals;
