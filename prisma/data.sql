@@ -9,11 +9,14 @@ INSERT INTO player (id, name, position) VALUES (8, 'Keyan Salarkia', 'Winger'); 
 INSERT INTO player (id, name, position) VALUES (9, 'Paul Hardy', 'Pressing Forward'); /*9*/
 INSERT INTO player (id, name, position) VALUES (10, 'Mark Bridger', 'Wide Forward'); /*10*/
 INSERT INTO player (id, name, position) VALUES (11, 'Connor', 'Box to Box'); /*11*/
+INSERT INTO player (id, name, position) VALUES (12, 'Jon', 'Midfielder'); /*12*/
+INSERT INTO player (id, name, position) VALUES (13, 'Luke', 'Defender'); /*13*/
 
 INSERT INTO location (id, name) VALUES (1, 'Lammas Park');
 
 INSERT INTO season (id, name, start_date, end_date, location_id, final_position) VALUES (1, 'Season 1', '30/8/22', '8/11/22', 1, 2);
-INSERT INTO season (id, name, start_date, end_date, location_id, final_position) VALUES (2, 'Season 2', '15/11/22', '14/02/22', 1, -1);
+INSERT INTO season (id, name, start_date, end_date, location_id, final_position) VALUES (2, 'Season 2', '15/11/22', '14/02/22', 1, 2);
+INSERT INTO season (id, name, start_date, end_date, location_id, final_position) VALUES (3, 'Season 3', '7/3/23', '30/05/23', 1, 0);
 
 INSERT INTO opponent (id, name) VALUES (1, 'Frogs'); /*1*/
 INSERT INTO opponent (id, name) VALUES (2, 'Ealing Finest'); /*2*/
@@ -39,6 +42,10 @@ INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES
 INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('10/01/23 20:20', 7, 9, False, 2);
 INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('24/01/23 19:00', 1, 6, False, 2);
 INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('31/01/23 19:00', 6, 7, False, 2);
+INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('07/02/23 20:20', 5, 7, False, 2);
+INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('14/02/23 19:00', 4, 0, True, 2);
+INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('21/02/23 19:00', 6, 9, False, 2);
+INSERT INTO game(date, opponent_id, opponent_goals, walk_over, season_id) VALUES ('07/03/23 19:00', 7, 10, False, 3);
 
 INSERT INTO appearance (game_date, player_id) VALUES ('30/08/22 19:40', 1);
 INSERT INTO appearance (game_date, player_id) VALUES ('30/08/22 19:40', 2);
@@ -123,6 +130,22 @@ INSERT INTO appearance (game_date, player_id) VALUES ('31/01/23 19:00', 2);
 INSERT INTO appearance (game_date, player_id) VALUES ('31/01/23 19:00', 6);
 INSERT INTO appearance (game_date, player_id) VALUES ('31/01/23 19:00', 7);
 INSERT INTO appearance (game_date, player_id) VALUES ('31/01/23 19:00', 9);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/02/23 20:20', 1);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/02/23 20:20', 2);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/02/23 20:20', 3);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/02/23 20:20', 5);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/02/23 20:20', 6);
+INSERT INTO appearance (game_date, player_id) VALUES ('21/02/23 19:00', 1);
+INSERT INTO appearance (game_date, player_id) VALUES ('21/02/23 19:00', 3);
+INSERT INTO appearance (game_date, player_id) VALUES ('21/02/23 19:00', 5);
+INSERT INTO appearance (game_date, player_id) VALUES ('21/02/23 19:00', 6);
+INSERT INTO appearance (game_date, player_id) VALUES ('21/02/23 19:00', 7);
+INSERT INTO appearance (game_date, player_id) VALUES ('21/02/23 19:00', 10);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/03/23 19:00', 1);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/03/23 19:00', 5);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/03/23 19:00', 6);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/03/23 19:00', 12);
+INSERT INTO appearance (game_date, player_id) VALUES ('07/03/23 19:00', 13);
 
 INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('30/08/22 19:40', 1, 1);
 INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('30/08/22 19:40', 2, 1);
@@ -175,3 +198,12 @@ INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('24/01/23
 INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('24/01/23 19:00', 4, 1);
 INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('31/01/23 19:00', 2, 2);
 INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('31/01/23 19:00', 9, 1);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('07/02/23 20:20', 2, 3);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('07/02/23 20:20', 3, 4);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('07/02/23 20:20', 5, 3);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('21/02/23 19:00', 1, 1);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('21/02/23 19:00', 5, 1);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('21/02/23 19:00', 10, 1);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('07/03/23 19:00', 1, 1);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('07/03/23 19:00', 5, 6);
+INSERT INTO goalscorer (game_date, player_id, number_of_goals) VALUES ('07/03/23 19:00', 12, 1);
