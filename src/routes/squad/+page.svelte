@@ -10,24 +10,30 @@
         {#each data.allPlayers as player}
             <div class="playerCard">
                 <div class="playerMain">
-                    <img src="/images/{player.name}.jpg" alt="{player.name}"/>
                     <div class="playerName">
                         <p style="font-weight: bold;">{player.name}</p>
                         <p>{player.position}</p>
                     </div>
+                    <img src="/images/{player.name}.jpg" alt="{player.name}"/>
                 </div>
                 <div class="playerDetails">
                     <div class="stat">
                         <p style="font-weight: bold;">Apps</p>
-                        <p>{player._count.apperances}</p>
                     </div>
                     <div class="stat">
                         <p style="font-weight: bold;">Goals</p>
-                        <p>{player.goals.reduce((t, g) => {return t + g.number_of_goals}, 0)}</p>
                     </div>
                     <div class="stat">
-                        <p style="font-weight: bold;">G/A</p>
-                        <p>{Math.round(player.goals.reduce((t, g) => {return t + g.number_of_goals}, 0) / player._count.apperances* 100) / 100}</p>
+                        <p style="font-weight: bold;">Goals/App</p>
+                    </div>
+                    <div class="stat">
+                        <p style="font-size: 1rem;">{player._count.apperances}</p>
+                    </div>
+                    <div class="stat">
+                        <p style="font-size: 1rem;">{player.goals.reduce((t, g) => {return t + g.number_of_goals}, 0)}</p>
+                    </div>
+                    <div class="stat">
+                        <p style="font-size: 1rem;">{Math.round(player.goals.reduce((t, g) => {return t + g.number_of_goals}, 0) / player._count.apperances* 100) / 100}</p>
                     </div>
                 </div>
             </div>
@@ -56,11 +62,6 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        border-radius: 50%;
-        background-image: linear-gradient(GoldenRod, Gold);
-        padding: 0.75rem;
-        outline: 2px solid white ;
-        outline-offset: -4px ;
         gap: 0.2rem;
     }
 
@@ -75,17 +76,9 @@
     }
 
     .playerName {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-        position: relative;
-        top: -30px;
-        background-image: linear-gradient(grey, lightgrey);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
         text-transform: uppercase;
-        outline: 2px solid white ;
-        outline-offset: -4px;
+        font-size: 1rem;
+        letter-spacing: 0.15rem;
     }
 
     .squadList{
@@ -102,6 +95,7 @@
         padding: 1rem;
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        gap: 1rem;
     }
 
     .playerMain {
@@ -109,12 +103,15 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
-        margin-bottom: -20px;
+        gap: 1rem;
     }
 
     .playerDetails {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.5rem;
+        gap: 0.2rem;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.15rem;
     }
 </style>

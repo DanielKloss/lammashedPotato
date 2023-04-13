@@ -69,40 +69,24 @@
     }
 
     .statName {
-        text-align: center;
-        background-image: linear-gradient(grey, lightgrey);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
         text-transform: uppercase;
-        outline: 2px solid white ;
-        outline-offset: -4px;
-        font-weight: bold;
+        font-size: 0.65rem;
+        letter-spacing: 0.15rem;
     }
 
     .statDetails {
         display: flex;
         align-items: center;
+        gap: 1rem;
     }
 
     .statValue {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        border-radius: 50%;
-        background-image: linear-gradient(GoldenRod, Gold);
-        padding: 0.75rem;
-        outline: 2px solid white ;
-        outline-offset: -4px ;
-        min-width: 1rem;
-        z-index: 1;
+        font-size: xx-large;
     }
 
     .statPlayerName {
-        margin-left: -1rem;
-        padding: 0.5rem 1rem 0.5rem 1.5rem;
-        background-image: linear-gradient(GoldenRod, Gold);
-        outline: 2px solid white ;
-        outline-offset: -4px ;
-        border-radius: 0 15px 15px 0;
+        text-transform: uppercase;
+        font-size: 0.65rem;
+        letter-spacing: 0.15rem;
     }
 </style>

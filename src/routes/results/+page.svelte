@@ -11,7 +11,7 @@
 
 <main class="page">
     <p class="seasonTitle">Pick a Season</p>
-    <select class="select" bind:value={selectedSeason} on:change={() => stats = calculateStats(data.seasons, selectedSeason)}>
+    <select class="select card" bind:value={selectedSeason} on:change={() => stats = calculateStats(data.seasons, selectedSeason)}>
         {#each data.seasons as season}
             <option value={season.name}>
                 {season.name}
@@ -52,14 +52,13 @@
         border: none;
         text-align: center;
         padding: 1rem;
-        background: linear-gradient(120deg, #155e75 0%, #0e7490 75%);
         border-radius: 5px;
     }
 
     .stats {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.1rem;
+        gap: 1rem;
     }
 
     .season {
